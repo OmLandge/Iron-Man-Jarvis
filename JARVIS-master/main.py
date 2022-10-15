@@ -38,19 +38,14 @@ GREETINGS_RES = ["always there for you sir", "i am ready sir",
                  "your wish my command", "how can i help you sir?", "i am online and ready sir"]
 
 EMAIL_DIC = {
-    'myself': 'omlandge0000@gmail.com',
-    'my official email': 'omlandge.prof@gmail.com',
-    'my second email': 'landgeom00@gmail.com',
-    'pradnya': 'landgepradnya1@gmail.com',
-    'office': 'choice.information@gmail.com',
-    'office official mail': 'choice.enterprises@yahoo.co.in'
+    'myself': 'your email',
+    'my official email': 'your official email',
+    'my second email': 'your seccond email'
 }
 
 CONTACT_DIC = {
-    'myself': '+918177875051',
-    'mummy': '+919011016061',
-    'pradnya': '+918855954331',
-    'office': '+919922007123'
+    'myself': 'your phone number',
+    'myself2': 'your second number'
 }
 
 CALENDAR_STRS = ["what do i have", "do i have plans", "am i busy"]
@@ -211,14 +206,10 @@ class MainThread(QThread):
                 print("Searching...")
             
             elif "play music" in command or "hit some music" in command:
-                music_dir = 'D:\\vids\\music'
+                music_dir = 'your music directory location'
                 songs = os.listdir(music_dir)
                 print(songs)    
                 os.startfile(os.path.join(music_dir, songs[0]))
-                # music_dir = "F://Songs//Imagine_Dragons"
-                # songs = os.listdir(music_dir)
-                # for song in songs:
-                #     os.startfile(os.path.join(music_dir, song))
 
             elif 'youtube' in command:
                 video = command.split(' ')[1]
@@ -284,7 +275,7 @@ class MainThread(QThread):
                 speak("Sir, which location should I search...")
                 gm = obj.mic_input()
                 if 'my home' in gm:
-                    webbrowser.open("https://earth.google.com/web/data=Mj8KPQo7CiExa0FZME1DSHB6bGFERmJXWUNkb0hmb1V3TF9yV011YmESFgoUMEIxQUFGODczMDFFMDFEN0RBMTc")
+                    webbrowser.open("https://earth.google.com/web/data=your home address data")
                 else :    
                     url = "https://earth.google.com/web/search/"
                     web = (url + f"{gm}")
@@ -314,11 +305,6 @@ class MainThread(QThread):
 
                 except:
                     speak("Sorry sir. Couldn't send your message. Please try again")
-                # speak("Sir, what should you want to message...")
-                # wm = obj.mic_input().lower()
-                # minutes = int(datetime.datetime.now().minute)
-                # hours = int(datetime.datetime.now().hour)
-                # kit.sendwhatmsg("+918177875051",f"{wm}" ,hours, minutes+1 )
 
             elif "covid" in command or "covid stats" in command:
                 covidStats_res = obj.covid_stats()
